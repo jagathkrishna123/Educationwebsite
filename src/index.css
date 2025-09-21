@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lexend+Deca:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-hind {
+  font-family: 'Hind', sans-serif;
+}
+
+.font-lexend {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+  cursor:default;
+}
