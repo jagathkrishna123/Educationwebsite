@@ -4,6 +4,7 @@ import Header from './component/Header'
 // import Footer from './component/Footer'
 import Home from './component/Home'
 import OurCourses from './component/OurCourses'
+import WhoWeAre from './component/WhoWeAre'
 // import Cursor from './component/Cursor'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       {/* <Footer/> */}
       <Home/>
       <OurCourses/>
+      <WhoWeAre/>
     </div>
   )
 }
