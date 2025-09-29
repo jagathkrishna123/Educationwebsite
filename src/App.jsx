@@ -5,6 +5,8 @@ import Header from './component/Header'
 import Home from './component/Home'
 import OurCourses from './component/OurCourses'
 import WhoWeAre from './component/WhoWeAre'
+import Footer from './component/Footer'
+import Excellence from './component/Excellence'
 // import Cursor from './component/Cursor'
 
 const App = () => {
@@ -18,6 +20,9 @@ const App = () => {
       <Home/>
       <OurCourses/>
       <WhoWeAre/>
+      <Excellence/>
+      <Footer/>
+      
     </div>
   )
 }

@@ -11,8 +11,11 @@
   font-family: 'Lexend Deca', sans-serif;
 }
 
-body {
+/* body {
   cursor:default;
+} */
+ html, body {
+  overflow-x: hidden;
 }
 
 /* @keyframes float {
