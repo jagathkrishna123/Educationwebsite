@@ -7,6 +7,7 @@ import OurCourses from './component/OurCourses'
 import WhoWeAre from './component/WhoWeAre'
 import Footer from './component/Footer'
 import Excellence from './component/Excellence'
+import Contactwithus from './component/Contactwithus'
 // import Cursor from './component/Cursor'
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
       <WhoWeAre/>
       <Excellence/>
       <Footer/>
-      
+      <Contactwithus/>
     </div>
   )
 }

@@ -20,10 +20,10 @@ import Icicon from "../assets/icicon.png"
 
 const Header = () => {
   return (
-    <div className='relative w-full flex flex-col h-auto mt-8 items-center justify-center min-h-[660px]'>
+    <div className='relative w-full flex flex-col h-auto mt-2 md:mt-8 items-center justify-center min-h-[660px]'>
       <img src={Javascripticon} alt="JS" className="absolute top-10 left-1/4 md:w-18 w-12 rounded animate-float1" />
       <img src={Pythonicon} alt="Python" className="absolute top-10 right-1/4 md:w-16 w-12 animate-float2" />
-      <img src={Reacticon} alt="React" className="absolute top-1/3 left-1/2 md:w-16 w-12 animate-float3" />
+      <img src={Reacticon} alt="React" className="absolute top-2/3 md:top-1/3 left-1/2 md:w-16 w-12 animate-float3" />
       <img src={Htmlicon} alt="HTML" className="absolute bottom-20 left-1/3 md:w-20 w-12 animate-float4" />
       <img src={Angularicon} alt="Angular" className="absolute bottom-10 right-1/3 md:w-14 w-12 animate-float5" />
 
