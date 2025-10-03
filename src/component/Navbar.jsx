@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Luminarlogo from "../assets/lumlogo.png";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react"
 
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Courses", path: "/" },
+    { name: "Courses", path: "/courses" },
     { name: "Placements", path: "/" },
     { name: "Blog", path: "/" },
     { name: "About", path: "/" },
-    { name: "Contact", path: "/" },
+    { name: "Contact", path: "/contactus" },
     { name: "Hire from us", path: "/" },
     { name: "More", path: "/" },
   ];
@@ -18,23 +19,44 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-//   React.useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 10);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-React.useEffect(() => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+// useEffect(() => {
+//   if (isContactOpen) {
+//     document.body.style.overflow = "hidden"; // prevent scrolling
+//   } else {
+//     document.body.style.overflow = "auto"; // restore scrolling
+//   }
+
+//   // cleanup on unmount
+//   return () => {
+//     document.body.style.overflow = "auto";
+//   };
+// }, [isContactOpen]);
+//prevent scroll 
+useEffect(() => {
   if (isContactOpen) {
-    document.body.style.overflow = "hidden"; // prevent scrolling
+    document.documentElement.style.overflow = "hidden"; 
+    document.body.style.overflow = "hidden";           
+    document.body.style.position = "fixed";            
+    document.body.style.width = "100%";   
   } else {
-    document.body.style.overflow = "auto"; // restore scrolling
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
+    document.body.style.position = "";
+    document.body.style.width = "";
   }
 
-  // cleanup on unmount
   return () => {
+    document.documentElement.style.overflow = "auto";
     document.body.style.overflow = "auto";
+    document.body.style.position = "";
+    document.body.style.width = "";
   };
 }, [isContactOpen]);
 
@@ -67,19 +89,27 @@ const onSubmit = async (event) => {
 
 
   return (
-    <nav
-      className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 transition-all duration-500 z-50 ${
-        isScrolled
-          ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
-          : "py-4 md:py-3"
-      }`}
+    <motion.nav
+    initial={{opacity: 0, y: -50}}
+    animate={{opacity: 1, y: 0}}
+    transition={{duration: 0.6, ease: 'easeOut'}}
+      // className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 transition-all duration-500 z-50 ${
+      //   isScrolled
+      //     ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
+      //     : "py-4 md:py-3"
+      // }`}
+      className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 z-50 ${
+  isScrolled
+    ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
+    : "py-4 md:py-3 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
+}`}
     >
       {/* Logo */}
-      <Link to="/">
+      <Link to="/" className="outline-none border-none focus:outline-none focus:border-none">
         <img
           src={Luminarlogo}
           alt="logo"
-          className={`h-16 ${isScrolled && "opacity-80"}`}
+          className={`h-16 border-none outline-none ${isScrolled && "opacity-80"}`}
         />
       </Link>
 
@@ -137,8 +167,9 @@ const onSubmit = async (event) => {
         </button>
       </div>
       {isContactOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 font-hind">
-          <div className="bg-white w-full max-w-xl rounded-xl shadow-lg p-6 relative">
+         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind">
+    <div className="bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative">
+
             {/* Close Button */}
             <button
               onClick={() => setIsContactOpen(false)}
@@ -240,7 +271,7 @@ const onSubmit = async (event) => {
           Login
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 export default Navbar;
