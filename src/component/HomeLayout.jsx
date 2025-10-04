@@ -6,7 +6,7 @@ import WhoWeAre from './WhoWeAre'
 import Excellence from './Excellence'
 const HomeLayout = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
               <div className='pt-20'>
                 <Header/>
               </div>

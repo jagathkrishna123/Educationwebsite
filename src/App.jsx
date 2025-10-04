@@ -17,16 +17,17 @@ import Coursedetailpage from './component/Coursedetailpage'
 const App = () => {
   
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Navbar/>
       <Routes>
           <Route path="/" element={<HomeLayout/>}/>
           <Route path="/contactus" element={<Contactwithus/>}/>
           <Route path="/courses" element={<OurCourses/>}/>
+          <Route path="/courses/:crsId" element={<Coursedetailpage />} /> 
       </Routes>
       
       <Footer/>
-      <Coursedetailpage/>
+      {/* <Coursedetailpage/> */}
       
     </div>
   )

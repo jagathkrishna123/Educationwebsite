@@ -65,7 +65,7 @@ const onSubmit = async (event) => {
   }
 };
   return (
-    <div className="relative w-full flex flex-col h-auto mt-0 md:mt-8 items-center  justify-center min-h-[660px]">
+    <div className="relative w-full flex flex-col h-auto mt-0 md:mt-8 items-center  justify-center min-h-[660px] overflow-x-hidden">
       <motion.img
   src={Javascripticon}
   alt="JS"

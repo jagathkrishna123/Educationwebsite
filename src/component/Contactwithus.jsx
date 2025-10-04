@@ -34,7 +34,7 @@ const Contactwithus = () => {
   };
 
   return (
-   <div className="w-full flex flex-col mb-5 mt-8">
+   <div className="w-full flex flex-col mb-5 mt-8 overflow-x-hidden">
   {/* Hero Section */}
   <section
     className="w-full h-[300px] bg-cover bg-center flex items-center justify-start px-6"

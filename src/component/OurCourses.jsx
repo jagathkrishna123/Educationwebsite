@@ -3,6 +3,7 @@ import { COURSESDATA } from "../contants";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { CiTimer } from "react-icons/ci";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 const container = {
   hidden: { opacity: 0 },
@@ -15,6 +16,7 @@ const childVariant = {
 };
 
 const OurCourses = () => {
+  const navigate = useNavigate()
   return (
     <div className="max-w-7xl mx-auto p-2 overflow-x-hidden">
       <div className="flex flex-col w-full p-2">
@@ -54,8 +56,9 @@ const OurCourses = () => {
         >
           {COURSESDATA.map((item, index) => (
             <div
+              onClick={()=>navigate(`/courses/${item.id}`)}
               key={index}
-              className="flex flex-col items-center rounded-xl border border-gray-300 shadow-lg"
+              className="flex flex-col items-center rounded-xl border border-gray-300 shadow-lg cursor-pointer"
             >
               {/* <div className="w-full overflow-hidden rounded-t-xl">
                 <img src={item.image} alt="" className="w-full bg-cover h-60" />

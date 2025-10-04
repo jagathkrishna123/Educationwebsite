@@ -54,7 +54,7 @@ const Footer = () => {
               initial={{opacity: 0, x: 30}}
               whileInView={{opacity: 1, x: 0}}
               transition={{duration: 0.6, delay: 0.3}}
-             className='flex flex-col gap-4'>
+             className='flex-col gap-4 hidden md:flex'>
               <p className='font-lexend font-bold text-[24px] text-white'>Usefull Links</p>
               <ul className='flex flex-col gap-3 font-hind font-medium text-gray-300'>
                 <li>Refund & Cancellation Policy</li>
