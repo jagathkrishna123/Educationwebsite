@@ -57,7 +57,7 @@ const Home = () => {
   }, [imagecollection.length]);
 
   return (
-    <div className="w-full overflow-hidden bg-white">
+    <div className="max-w-7xl w-full mx-auto overflow-hidden bg-white">
       {/* wrapper for animation */}
       <div className="flex animate-marquee">
         {/* Duplicate list for seamless loop */}

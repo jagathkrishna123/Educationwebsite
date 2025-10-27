@@ -108,8 +108,8 @@ const Contactwithus = () => {
             Email us at:
           </p>
           <p className="font-hind text-[13px] md:text-[14px] text-[#39557E]">
-            Enquiry: contact@luminartechnolab.com <br />
-            Placement Cell: hr@luminartechnolab.com
+            Enquiry: contact@scanntek.com <br />
+            Placement Cell: hr@sacnntek.com
           </p>
         </motion.div>
       </div>
@@ -132,9 +132,9 @@ const Contactwithus = () => {
             Locate us on (H Q):
           </p>
           <p className="font-hind text-[13px] md:text-[14px] text-[#39557E]">
-            Luminar Technolab Pvt Ltd, Ground Floor, K7 REALTY, <br /> Juma
-            Masjid Road, Seaport - Airport Rd, <br /> Opp: District Panchayat,
-            Kakkanad, Kochi, Kerala - 682030
+            Scanntek Solution Pvt Ltd, First Floor, KINFRA TECHNO INDUSTRIAL PARK, <br />
+            Calicut Road, Kakkanchery<br /> Near: Calicut University,
+            Malapuram, Kerala - 682033
           </p>
         </motion.div>
       </div>
@@ -265,7 +265,7 @@ const Contactwithus = () => {
             whileHover={{scale: 1.05}}
             transition={{delay:1.5, duration: 0.6}}
           type="submit"
-          className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+          className="w-full bg-cyan-700 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
         >
           SEND MESSAGE
         </motion.button>

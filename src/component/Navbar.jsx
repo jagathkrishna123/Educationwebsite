@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Luminarlogo from "../assets/lumlogo.png";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import ScanntekLogo from "./ScanntekLogo";
+// import Scannteklogo from "../assets/scanntek.png"
 
 const Navbar = () => {
   const navLinks = [
@@ -11,7 +13,7 @@ const Navbar = () => {
     { name: "Blog", path: "/" },
     { name: "About", path: "/" },
     { name: "Contact", path: "/contactus" },
-    { name: "Hire from us", path: "/" },
+    { name: "Gallery", path: "/gallery" },
     { name: "More", path: "/" },
   ];
 
@@ -26,91 +28,112 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-// useEffect(() => {
-//   if (isContactOpen) {
-//     document.body.style.overflow = "hidden"; // prevent scrolling
-//   } else {
-//     document.body.style.overflow = "auto"; // restore scrolling
-//   }
+  // useEffect(() => {
+  //   if (isContactOpen) {
+  //     document.body.style.overflow = "hidden"; // prevent scrolling
+  //   } else {
+  //     document.body.style.overflow = "auto"; // restore scrolling
+  //   }
 
-//   // cleanup on unmount
-//   return () => {
-//     document.body.style.overflow = "auto";
-//   };
-// }, [isContactOpen]);
-//prevent scroll 
-useEffect(() => {
-  if (isContactOpen) {
-    document.documentElement.style.overflow = "hidden"; 
-    document.body.style.overflow = "hidden";           
-    document.body.style.position = "fixed";            
-    document.body.style.width = "100%";   
-  } else {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-    document.body.style.position = "";
-    document.body.style.width = "";
-  }
+  //   // cleanup on unmount
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [isContactOpen]);
+  //prevent scroll
+  useEffect(() => {
+    if (isContactOpen) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    }
 
-  return () => {
-    document.documentElement.style.overflow = "auto";
-    document.body.style.overflow = "auto";
-    document.body.style.position = "";
-    document.body.style.width = "";
-  };
-}, [isContactOpen]);
+    return () => {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
+  }, [isContactOpen]);
 
   const [result, setResult] = useState("");
 
-const onSubmit = async (event) => {
-  event.preventDefault();
-  setResult("Sending....");
-  const formData = new FormData(event.target);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  formData.append("access_key", "d20d5659-cb0c-4043-ac6c-0de884faf194"); 
-  formData.append("to_email", "jagathkrishna900@gmail.com"); 
+    formData.append("access_key", "d20d5659-cb0c-4043-ac6c-0de884faf194");
+    formData.append("to_email", "jagathkrishna900@gmail.com");
 
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: formData,
-  });
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-  const data = await response.json();
-  console.log("Web3Forms Response:", data);
+    const data = await response.json();
+    console.log("Web3Forms Response:", data);
 
-  if (data.success) {
-    setResult("Form Submitted Successfully");
-    event.target.reset();
-  } else {
-    setResult("❌ Something went wrong: " + data.message);
-  }
-};
-
-
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("❌ Something went wrong: " + data.message);
+    }
+  };
 
   return (
     <motion.nav
-    initial={{opacity: 0, y: -50}}
-    animate={{opacity: 1, y: 0}}
-    transition={{duration: 0.6, ease: 'easeOut'}}
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       // className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 transition-all duration-500 z-50 ${
       //   isScrolled
       //     ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
       //     : "py-4 md:py-3"
       // }`}
-      className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 z-50 ${
-  isScrolled
-    ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
-    : "py-4 md:py-3 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
-}`}
+      className={`fixed top-0 left-0 bg-green-700 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 z-50 ${
+        isScrolled
+          ? "bg-white/40 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
+          : "py-4 md:py-3 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
+      }`}
     >
       {/* Logo */}
-      <Link to="/" className="outline-none border-none focus:outline-none focus:border-none">
-        <img
-          src={Luminarlogo}
+      <Link
+        to="/"
+        className="outline-none border-none focus:outline-none focus:border-none"
+      >
+        {/* <img
+          src={Scannteklogo}
           alt="logo"
-          className={`h-16 border-none outline-none ${isScrolled && "opacity-80"}`}
-        />
+          className={`h-16 border-none outline-none ${isScrolled && "opacity-80 invert"}`}
+        /> */}
+        <div className="py-3">
+          <div className="flex items-center space-x-1">
+            <span className="text-3xl font-extrabold tracking-wide text-[#242a35]">
+              Scanntek
+            </span>
+            <div
+              className={` px-3 py-1 rounded-lg h-fit shadow-xl  ${
+                isScrolled ? "bg-green-600" : "bg-white"
+              }`}
+            >
+              <span
+                className={` text-lg font-bold -tracking-normal ${
+                  isScrolled ? "text-white" : "text-green-700"
+                }`}
+              >
+                Edu
+              </span>
+            </div>
+          </div>
+        </div>
       </Link>
 
       {/* Desktop Nav */}
@@ -119,7 +142,7 @@ const onSubmit = async (event) => {
           <a
             key={i}
             href={link.path}
-            className={`group flex flex-col gap-0.5 hover:text-[#9116A1] ${
+            className={`group flex flex-col gap-0.5 hover:text-yellow-500 ${
               isScrolled ? "text-gray-700" : "text-white"
             }`}
           >
@@ -156,20 +179,33 @@ const onSubmit = async (event) => {
                     <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
                         Login
                     </button> */}
-        <button className="bg-gradient-to-b from-violet-800 via-violet-600 to-violet-800 text-white rounded-lg px-3 py-2 font-medium text-[15px]">
-          ENQUIRE NOW
-        </button>
         <button
-          onClick={() => setIsContactOpen(true)}
-          className="bg-gradient-to-b from-violet-800 via-violet-600 to-violet-800 text-white rounded-lg px-3 py-2 font-medium text-[15px]"
-        >
-          BOOK A CALLBACK
-        </button>
+  className="text-white rounded-lg px-3 py-2 font-medium text-[15px]
+             bg-gradient-to-b from-cyan-600 to-cyan-800
+             transition-all duration-300 ease-out
+             hover:from-cyan-400 hover:to-cyan-600
+             hover:scale-105 hover:shadow-lg"
+>
+  ENQUIRE NOW
+</button>
+
+
+
+        <button
+  onClick={() => setIsContactOpen(true)}
+  className="relative overflow-hidden text-white rounded-lg px-4 py-2.5 font-medium text-[15px]
+             bg-gradient-to-b from-cyan-600 to-cyan-800
+             transition-all duration-300 ease-out
+             hover:from-cyan-400 hover:to-cyan-600
+             hover:scale-105 hover:shadow-lg"
+>
+  BOOK A CALLBACK
+</button>
+
       </div>
       {isContactOpen && (
-         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind">
-    <div className="bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative">
-
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind">
+          <div className="bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative">
             {/* Close Button */}
             <button
               onClick={() => setIsContactOpen(false)}
@@ -208,14 +244,13 @@ const onSubmit = async (event) => {
               ></textarea>
               <button
                 type="submit"
-                className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+                className="bg-cyan-700 text-white py-2 rounded-lg hover:bg-cyan-900"
               >
                 Send Message
               </button>
               <p className="text-gray-800 text-[14px]">{result}</p>
             </form>
           </div>
-          
         </div>
       )}
 

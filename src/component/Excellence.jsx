@@ -29,7 +29,7 @@ const Excellence = () => {
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
-           className="font-hind text-[16px] bg-slate-200 px-1 max-w-xs rounded text-[#9116A1] font-medium">
+           className="font-hind text-[16px] border border-cyan-600 px-1 max-w-xs rounded text-cyan-700 font-medium">
             Excellence in Education
           </motion.p>
         </div>
@@ -38,10 +38,10 @@ const Excellence = () => {
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 0.5, delay: 0.2}} 
-           className="text-[#082A5E] text-[22px] md:text-[36px] font-bold font-lexend">
-            Why Luminar Technolab is the <br />{" "}
-            <span className="text-[#9116A1]">Best Software Training</span>{" "}
-            Institute in Kochi
+           className="text-gray-800 text-[22px] md:text-[36px] font-bold font-lexend">
+            Why Scanntek Edu is the <br />{" "}
+            <span className="text-green-600">Best Software Training</span>{" "}
+            Institute in Calicut
           </motion.p>
         </div>
         <motion.div
@@ -114,14 +114,21 @@ const Excellence = () => {
 
         <div className="flex items-center justify-center">
           <button
-            className="relative overflow-hidden text-white rounded-lg px-3 py-2 font-medium text-[15px] flex items-center gap-2
-                              bg-gradient-to-r from-violet-800 via-violet-600 to-violet-800
-                              bg-[length:200%_200%] bg-left-top
-                              transition-all duration-300
-                              hover:bg-right-bottom hover:scale-105 hover:shadow-lg"
-          >
-            EXPLORE COURSES <FaArrowRight />
-          </button>
+  className="relative overflow-hidden text-white rounded-lg px-5 py-2.5 font-semibold text-[15px] flex items-center gap-2
+             bg-gradient-to-b from-cyan-600 to-cyan-800
+             shadow-[0_4px_0_0_#0e7490,0_6px_10px_rgba(0,0,0,0.4)]
+             transform active:translate-y-[2px] active:shadow-[0_2px_0_0_#0e7490,0_3px_6px_rgba(0,0,0,0.3)]
+             transition-all duration-300 ease-out
+             hover:translate-y-[-2px] hover:shadow-[0_6px_0_0_#0e7490,0_12px_20px_rgba(0,0,0,0.5)]
+             group"
+>
+  <span className="relative z-10">EXPLORE COURSES</span>
+  <FaArrowRight className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1" />
+
+  {/* Subtle light reflection sheen */}
+  <span className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></span>
+</button>
+
         </div>
       </div>
     </div>

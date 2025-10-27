@@ -19,6 +19,7 @@
   cursor:default;
 } */
  html, body {
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -74,3 +75,23 @@
 .animate-float3 { animation: float3 6s ease-in-out infinite; }
 .animate-float4 { animation: float4 4.5s ease-in-out infinite; }
 .animate-float5 { animation: float5 5.5s ease-in-out infinite; }
+
+/* Hide scrollbar but keep scrolling */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+html {
+  scroll-behavior: smooth;
+}

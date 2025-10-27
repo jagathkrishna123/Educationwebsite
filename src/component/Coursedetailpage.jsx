@@ -70,44 +70,44 @@ const Coursedetailpage = () => {
       </section>
       <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-3 mt-6">
         {/* left div */}
-        <div className="md:w-1/3 max-w-md mx-3 md:mx-0 flex flex-col bg-white shadow-lg p-4 rounded-lg gap-3 h-fit">
+        <div className="md:w-1/3 max-w-md mx-3 md:mx-0 flex flex-col bg-white shadow-lg p-4 rounded-lg gap-3 h-fit font-hind">
           <div className="w-full flex items-center justify-center">
-            <button className="max-w-xs w-full  bg-gradient-to-b from-violet-800 via-violet-600 to-violet-800 text-white rounded-lg px-3 py-2 font-medium text-[15px]">
+            <button className="max-w-xs w-full font-lexend  bg-cyan-800 text-white rounded-lg px-3 py-2 font-medium text-[15px]">
               APPLY NOW
             </button>
           </div>
           <p className="text-center text-[14px] font-hind text-[#6B7385]">
             🏆 100% Placement assistance 🏆
           </p>
-          <div className="flex flex-col text-[#6B7385] text-[16px] mx-6">
+          <div className="flex flex-col text-[#6B7385] text-[16px] mx-6 font-hind">
             <div className="flex flex-row justify-between py-3">
               <p>Duration</p>
-              <p>{courseInfo.duration}</p>
+              <p className="bg-slate-500 px-2 py-[2px] rounded-lg text-[13px] text-center inline-block text-white">{courseInfo.duration}</p>
             </div>{" "}
             <hr />
             <div className="flex flex-row justify-between py-3">
               <p>Session Duration</p>
-              <p>{courseInfo.sessionduration}</p>
+              <p className="bg-slate-100 px-2 rounded-lg text-[13px]">{courseInfo.sessionduration}</p>
             </div>
             <hr />
             <div className="flex flex-row justify-between py-3">
               <p>Class Schedule</p>
-              <p>{courseInfo.scheduleddays}</p>
+              <p className="bg-slate-100 px-2 rounded-lg text-[13px]">{courseInfo.scheduleddays}</p>
             </div>
             <hr />
             <div className="flex flex-row justify-between py-3">
               <p>Mode</p>
-              <p>{courseInfo.mode}</p>
+              <p className="bg-slate-100 px-2 rounded-lg text-[13px]">{courseInfo.mode}</p>
             </div>
             <hr />
             <div className="flex flex-row justify-between py-3">
               <p>Enrolled</p>
-              <p>{courseInfo.Enrolled}</p>
+              <p className="bg-slate-100 px-2 rounded-lg text-[13px]">{courseInfo.Enrolled}</p>
             </div>
             <hr />
             <div className="flex flex-row justify-between py-3">
               <p>Languages & Tools</p>
-              <p>{courseInfo.languagAndTools}</p>
+              <p className="bg-slate-100 px-2 rounded-lg text-[12px]">{courseInfo.languagAndTools}</p>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-3">
@@ -124,7 +124,7 @@ const Coursedetailpage = () => {
         </div>
 
         {/* right div */}
-        <div className="md:w-2/3 w-full p-3 md:p-0 flex flex-col gap-3 overflow-y-auto mb-4">
+        <div className="md:w-2/3 w-full p-3 md:p-0 flex flex-col gap-3 mb-4 overflow-y-auto h-screen hide-scrollbar">
           <div className=" flex flex-col bg-white shadow-lg rounded-lg p-3 px-6 h-fit">
             <div className="flex flex-col gap-4">
               <motion.p
@@ -149,7 +149,7 @@ const Coursedetailpage = () => {
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.8, duration: 0.6 }}
-                  className="flex flex-col"
+                  className="flex flex-col leading-loose"
                 >
                   <p className="flex flex-row items-center gap-1 text-[#39557E] text-[14px] md:text-[18px]">
                     <MdOutlineKeyboardDoubleArrowRight className="text-green-500 text-[18px]" />
@@ -169,7 +169,7 @@ const Coursedetailpage = () => {
                   initial={{ x: 50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.9, duration: 0.6 }}
-                  className="flex flex-col"
+                  className="flex flex-col leading-loose"
                 >
                   <p className="flex flex-row items-center gap-1 text-[#39557E] text-[14px] md:text-[18px]">
                     <MdOutlineKeyboardDoubleArrowRight className="text-green-500 text-[18px]" />
