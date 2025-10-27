@@ -58,7 +58,7 @@ const WhoWeAre = () => {
      <div className="flex flex-wrap justify-center gap-6">
   {/* Card 1 */}
   <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-400">
+    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
       <LuUserRoundCheck className="text-4xl text-white" />
     </div>
     <div className="flex flex-col justify-center">
@@ -71,7 +71,7 @@ const WhoWeAre = () => {
 
   {/* Card 2 */}
   <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-400">
+    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
       <IoDocumentTextOutline className="text-4xl text-white" />
     </div>
     <div className="flex flex-col justify-center">
@@ -84,7 +84,7 @@ const WhoWeAre = () => {
 
   {/* Card 3 */}
   <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-400">
+    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
       <GiGraduateCap className="text-4xl text-white" />
     </div>
     <div className="flex flex-col justify-center">
