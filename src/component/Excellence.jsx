@@ -50,7 +50,7 @@ const Excellence = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          className="grid grid-cols-2 md:grid-cols-4 font-lexend justify-between gap-4"
+          className="grid grid-cols-1 md:grid-cols-4 font-lexend justify-between gap-4"
         >
           <motion.div
             variants={item}
