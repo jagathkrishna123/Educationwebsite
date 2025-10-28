@@ -117,6 +117,7 @@ import slideimg3 from "../assets/slideimg3.jpg";
 import slideimg4 from "../assets/slideimg4.jpg";
 import slideimg5 from "../assets/slideimg5.jpg";
 import slideimg6 from "../assets/slideimg6.jpg";
+import { useEffect, useState } from "react";
 
 const Aboutus = () => {
   const courses = [
@@ -138,6 +139,35 @@ const Aboutus = () => {
     { image: slideimg3, name: "Senior Developer", experience: "8+ Years" },
     { image: slideimg4, name: "Tech Lead", experience: "12+ Years" }
   ];
+
+    // Extract only numeric part (e.g., "2500+" → 2500, "95%" → 95)
+  const targets = achievements.map((a) => parseInt(a.number));
+
+  const [counts, setCounts] = useState(targets.map(() => 0));
+
+  useEffect(() => {
+    const intervals = targets.map((finalNumber, i) => {
+      let current = 0;
+      const increment = Math.ceil(finalNumber / 60); // control speed
+      const interval = setInterval(() => {
+        current += increment;
+        if (current >= finalNumber) {
+          current = finalNumber;
+          clearInterval(interval);
+        }
+        setCounts((prev) => {
+          const updated = [...prev];
+          updated[i] = current;
+          return updated;
+        });
+      }, 40); // update every 40ms for fast smooth counting
+      return interval;
+    });
+
+    return () => intervals.forEach((interval) => clearInterval(interval));
+  }, []);
+
+
 
   return (
     <div className="w-full flex flex-col mb-5 mt-8 overflow-x-hidden">
@@ -273,47 +303,51 @@ const Aboutus = () => {
       </div>
 
       {/* Achievements Section */}
-      <div className="max-w-7xl w-full mx-auto p-3 mt-16">
-        <div className="flex items-center justify-center mb-8">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-hind font-medium text-[16px] text-[#9116A1] bg-gray-300 px-4 py-2 rounded-sm"
-          >
-            Our Achievements
-          </motion.span>
-        </div>
-        <motion.h2
+       <div className="max-w-7xl w-full mx-auto p-3 mt-16">
+      <div className="flex items-center justify-center mb-8">
+        <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-lexend text-[28px] md:text-[40px] font-bold text-gray-800 text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="font-hind font-medium text-[16px] text-[#9116A1] bg-gray-300 px-4 py-2 rounded-sm"
         >
-          Numbers That Speak for Themselves
-        </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {achievements.map((achievement, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
-            >
-              <div className="text-4xl text-cyan-600 mb-4 flex justify-center">
-                {achievement.icon}
-              </div>
-              <h3 className="font-lexend text-[32px] md:text-[40px] font-bold text-gray-800 mb-2">
-                {achievement.number}
-              </h3>
-              <p className="font-hind text-[14px] md:text-[16px] text-gray-600">
-                {achievement.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+          Our Achievements
+        </motion.span>
       </div>
+
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="font-lexend text-[28px] md:text-[40px] font-bold text-gray-800 text-center mb-12"
+      >
+        Numbers That Speak for Themselves
+      </motion.h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {achievements.map((achievement, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
+          >
+            <div className="text-4xl text-cyan-600 mb-4 flex justify-center">
+              {achievement.icon}
+            </div>
+            <h3 className="font-lexend text-[32px] md:text-[40px] font-bold text-gray-800 mb-2">
+              {counts[index]}
+              {achievement.number.includes("+") && "+"}
+              {achievement.number.includes("%") && "%"}
+            </h3>
+            <p className="font-hind text-[14px] md:text-[16px] text-gray-600">
+              {achievement.label}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
 
       {/* Courses Section */}
       <div className="max-w-7xl w-full mx-auto p-3 mt-16">
