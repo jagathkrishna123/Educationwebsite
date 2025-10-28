@@ -309,7 +309,7 @@ import Mainimg2 from "../assets/mainimg2.png";
 import Scholar from "../assets/scholar.png";
 import Icicon from "../assets/icicon.png";
 import Flutter from "../assets/flutter2.png";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -382,7 +382,7 @@ const Header = () => {
       <img
         src={Reacticon}
         alt="React"
-        className="absolute top-2/3 md:top-1/3 left-1/2 md:w-16 w-12 animate-float3"
+        className="absolute top-1/6 md:top-1/3 left-1/2 md:w-16 w-12 animate-float3"
       />
       <img
   src={Htmlicon}
@@ -440,121 +440,142 @@ const Header = () => {
 
       <div className="max-w-7xl w-full flex flex-col md:flex-row mx-auto mt-2 md:mt-5">
         {/* left........edit gap reponsive fully................ */}
-        <div className="relative flex flex-col w-full mt-0 md:mt-4 gap-3 md:gap-6 p-1 ">
-          {/* Background image only on mobile */}
-          <img
-            src={Mainimg2}
-            alt="background"
-            className="absolute inset-0 w-full h-full object-contain opacity-20 md:hidden"
+        <div className="relative flex flex-col w-full mt-0 md:mt-4 gap-3 md:gap-6 p-1">
+  {/* Background image only on mobile */}
+  <img
+    src={Mainimg2}
+    alt="background"
+    className="absolute inset-0 w-full h-full object-contain opacity-20 md:hidden"
+  />
+
+  {/* Top Label */}
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.7 }}
+    className="text-[16px] font-hind text-[#9116A1] flex gap-1 items-center justify-center md:justify-start relative z-10"
+  >
+    <img src={Trophyimg} alt="" className="w-5" />
+    Leaders in Education Since 6 Years
+  </motion.p>
+
+  {/* Heading */}
+<div className="flex max-w-lg w-full mx-auto md:mx-0 md:w-auto text-center md:text-left mt-5 md:mt-0 relative z-10">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.8 }}
+      className="font-lexend text-[32px] md:text-[55px] text-gray-900 font-bold leading-tight"
+    >
+      Kerala's <span className="text-green-700">No.1</span> Software
+      Training Institute
+    </motion.h2>
+  </div>
+
+  {/* Description */}
+  <div className="flex flex-col w-full md:w-[500px] mt-8 md:mt-0 relative z-10 mx-auto md:mx-0 ">
+    <motion.p
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="font-hind text-sm md:text-base text-[#39557E] text-center md:text-left leading-relaxed"
+    >
+      Best software training institute in Calicut. Job-ready tech skills
+      for your career. As the best software training institute in Kochi,
+      we're committed to your career success through industry-relevant
+      curriculum and hands-on training.
+    </motion.p>
+  </div>
+
+  {/* Buttons + Popup */}
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 1.3 }}
+    className="w-full flex flex-col md:flex-row gap-3 mt-5 relative z-10 items-center md:items-start justify-center md:justify-start"
+  >
+    <div className="flex flex-col md:flex-row gap-3 items-center justify-center md:justify-start">
+      <button
+        className="relative overflow-hidden text-white font-ark rounded-lg px-3 py-2 font-medium text-[15px] flex items-center gap-2 bg-cyan-900 bg-[length:200%_200%] bg-left-top transition-all duration-300 hover:bg-right-bottom hover:scale-105 hover:shadow-lg"
+      >
+        EXPLORE COURSES <FaArrowRight />
+      </button>
+      <button
+        onClick={() => setIsContactOpen(true)}
+        className="border-2 border-cyan-900 bg-white text-cyan-900 rounded-lg px-3 py-2 font-medium font-ark text-[15px] bg-[length:200%_200%] bg-left-top transition-all duration-300 hover:bg-right-bottom hover:scale-105 hover:shadow-lg z-10"
+      >
+        BOOK A CALLBACK
+      </button>
+    </div>
+
+    {isContactOpen && (
+  <AnimatePresence>
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <motion.div
+        className="bg-white w-full max-w-sm md:max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative"
+        initial={{ opacity: 0, scale: 0.9, y: 50 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 50 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <button
+          onClick={() => setIsContactOpen(false)}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+        >
+          ✕
+        </button>
+
+        <h2 className="text-2xl font-semibold mb-4 font-lexend text-[#082A5E] text-[20px]">
+          Callback Request
+        </h2>
+
+        <form onSubmit={onSubmit} className="flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            name="name"
+            className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
+          <input
+            type="phone"
+            placeholder="Phone"
+            name="phone"
+            className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            name="email"
+            className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="4"
+            name="message"
+            className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="text-[16px] font-hind text-[#9116A1] flex gap-1 items-center justify-center md:items-start md:justify-start relative z-10"
+          <button
+            type="submit"
+            className="bg-cyan-700 text-white py-2 rounded-lg hover:bg-cyan-900"
           >
-            <img src={Trophyimg} alt="" className="w-5" />
-            Leaders in Education Since 6 Years
-          </motion.p>
+            Send Message
+          </button>
+          <p className="text-gray-800 text-[14px]">{result}</p>
+        </form>
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
+)}
+  </motion.div>
+</div>
 
-          <div className="max-w-lg text-center md:text-left mt-5 md:mt-0 relative z-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="font-lexend text-[32px] md:text-[55px] text-gray-900 font-bold leading-tight"
-            >
-              Kerala's <span className="text-green-700">No.1</span> Software
-              Training Institute
-            </motion.h2>
-          </div>
-
-          <div className="flex flex-col max-w-md mt-8 md:mt-0 relative z-10">
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="font-hind text-sm md:text-base text-[#39557E] text-center md:text-left leading-relaxed"
-            >
-              Best software training institute in Calicut. Job-ready tech skills
-              for your career. As the best software training institute in Kochi,
-              we're committed to your career success through industry-relevant
-              curriculum and hands-on training.
-            </motion.p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
-            className="w-full flex flex-col md:flex-row gap-3 mt-5 relative z-10"
-          >
-            <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
-              <button
-                className="relative overflow-hidden text-white font-ark rounded-lg px-3 py-2 font-medium text-[15px] flex items-center gap-2 bg-cyan-900 bg-[length:200%_200%] bg-left-top transition-all duration-300 hover:bg-right-bottom hover:scale-105 hover:shadow-lg"
-              >
-                EXPLORE COURSESS <FaArrowRight />
-              </button>
-              <button
-                onClick={() => setIsContactOpen(true)}
-                className="border-2 border-cyan-900 bg-white text-cyan-900 rounded-lg px-3 py-2 font-medium font-ark text-[15px] bg-[length:200%_200%] bg-left-top transition-all duration-300 hover:bg-right-bottom hover:scale-105 hover:shadow-lg z-10"
-              >
-                BOOK A CALLBACK
-              </button>
-            </div>
-
-            {isContactOpen && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind">
-                <div className="bg-white w-full max-w-sm md:max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative">
-                  <button
-                    onClick={() => setIsContactOpen(false)}
-                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-                  >
-                    ✕
-                  </button>
-
-                  <h2 className="text-2xl font-semibold mb-4 font-lexend text-[#082A5E] text-[20px]">
-                    Callback Request
-                  </h2>
-                  <form onSubmit={onSubmit} className="flex flex-col gap-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      name="name"
-                      className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <input
-                      type="phone"
-                      placeholder="Phone"
-                      name="phone"
-                      className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      name="email"
-                      className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <textarea
-                      placeholder="Your Message"
-                      rows="4"
-                      name="message"
-                      className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    ></textarea>
-                    <button
-                      type="submit"
-                      className="bg-cyan-700 text-white py-2 rounded-lg hover:bg-cyan-900"
-                    >
-                      Send Messagee
-                    </button>
-                    <p className="text-gray-800 text-[14px]">{result}</p>
-                  </form>
-                </div>
-              </div>
-            )}
-          </motion.div>
-        </div>
 
         {/* right............................ */}
         <motion.div

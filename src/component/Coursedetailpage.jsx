@@ -124,7 +124,7 @@ const Coursedetailpage = () => {
         </div>
 
         {/* right div */}
-        <div className="md:w-2/3 w-full p-3 md:p-0 flex flex-col gap-3 mb-4 overflow-y-auto h-screen hide-scrollbar">
+        <div className="md:w-2/3 w-full p-3 md:p-0 flex flex-col gap-3 mb-4 md:overflow-y-auto h-screen hide-scrollbar">
           <div className=" flex flex-col bg-white shadow-lg rounded-lg p-3 px-6 h-fit">
             <div className="flex flex-col gap-4">
               <motion.p

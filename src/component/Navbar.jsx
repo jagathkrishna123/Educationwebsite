@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Luminarlogo from "../assets/lumlogo.png";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
 import ScanntekLogo from "./ScanntekLogo";
+import { motion, AnimatePresence } from "framer-motion";
 // import Scannteklogo from "../assets/scanntek.png"
 
 const Navbar = () => {
@@ -11,10 +11,10 @@ const Navbar = () => {
     { name: "Courses", path: "/courses" },
     { name: "Placements", path: "/" },
     { name: "Blog", path: "/" },
-    { name: "About", path: "/" },
+    { name: "About", path: "/aboutus" },
     { name: "Contact", path: "/contactus" },
     { name: "Gallery", path: "/gallery" },
-    { name: "More", path: "/" },
+    { name: "Gallery2", path: "/gallerycom" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -180,79 +180,93 @@ const Navbar = () => {
                         Login
                     </button> */}
         <button
-  className="text-white rounded-lg px-3 py-2 font-medium text-[15px]
+          className="text-white rounded-lg px-3 py-2 font-medium text-[15px]
              bg-gradient-to-b from-cyan-600 to-cyan-800
              transition-all duration-300 ease-out
              hover:from-cyan-400 hover:to-cyan-600
              hover:scale-105 hover:shadow-lg"
->
-  ENQUIRE NOW
-</button>
-
-
+        >
+          ENQUIRE NOW
+        </button>
 
         <button
-  onClick={() => setIsContactOpen(true)}
-  className="relative overflow-hidden text-white rounded-lg px-4 py-2.5 font-medium text-[15px]
+          onClick={() => setIsContactOpen(true)}
+          className="relative overflow-hidden text-white rounded-lg px-4 py-2.5 font-medium text-[15px]
              bg-gradient-to-b from-cyan-600 to-cyan-800
              transition-all duration-300 ease-out
              hover:from-cyan-400 hover:to-cyan-600
              hover:scale-105 hover:shadow-lg"
->
-  BOOK A CALLBACK
-</button>
-
+        >
+          BOOK A CALLBACK
+        </button>
       </div>
-      {isContactOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind">
-          <div className="bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsContactOpen(false)}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+      <AnimatePresence>
+        {isContactOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 font-hind"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="bg-white w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-xl shadow-lg p-6 relative"
+              initial={{ opacity: 0, y: 100, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 100, scale: 0.95 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              ✕
-            </button>
-
-            <h2 className="text-2xl font-semibold mb-4 font-lexend text-[#082A5E] text-[20px]">
-              Callback Request
-            </h2>
-            <form onSubmit={onSubmit} className="flex flex-col gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                name="name"
-                className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="phone"
-                placeholder="Phone"
-                name="phone"
-                className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <textarea
-                placeholder="Your Message"
-                rows="4"
-                name="message"
-                className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+              {/* Close Button */}
               <button
-                type="submit"
-                className="bg-cyan-700 text-white py-2 rounded-lg hover:bg-cyan-900"
+                onClick={() => setIsContactOpen(false)}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               >
-                Send Message
+                ✕
               </button>
-              <p className="text-gray-800 text-[14px]">{result}</p>
-            </form>
-          </div>
-        </div>
-      )}
+
+              <h2 className="text-2xl font-semibold mb-4 font-lexend text-[#082A5E] text-[20px]">
+                Callback Request
+              </h2>
+
+              <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  name="name"
+                  className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="phone"
+                  placeholder="Phone"
+                  name="phone"
+                  className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  name="email"
+                  className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  rows="4"
+                  name="message"
+                  className="border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  className="bg-cyan-700 text-white py-2 rounded-lg hover:bg-cyan-900"
+                >
+                  Send Message
+                </button>
+
+                <p className="text-gray-800 text-[14px]">{result}</p>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu Button */}
       <div className="flex items-center gap-3 md:hidden">

@@ -14,6 +14,8 @@ import OurCourses from './component/OurCourses'
 import Coursedetailpage from './component/Coursedetailpage'
 import Gallery from './component/Gallery'
 import Lenis from '@studio-freight/lenis/types'
+import Aboutus from './component/Aboutus'
+import Gallerycomp from './component/Gallerycomp'
 // import Cursor from './component/Cursor'
 
 const App = () => {
@@ -41,6 +43,8 @@ const App = () => {
           <Route path="/courses" element={<OurCourses/>}/>
           <Route path="/courses/:crsId" element={<Coursedetailpage />} /> 
           <Route path="/gallery" element={<Gallery/>}/>
+          <Route path="/gallerycom" element={<Gallerycomp/>}/>
+          <Route path="/aboutus" element={<Aboutus/>}/>
       </Routes>
       
       <Footer/>

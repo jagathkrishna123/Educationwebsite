@@ -218,7 +218,7 @@ const Gallery = () => {
 
   return (
     <div className="w-full flex justify-center mt-16">
-      <div className="container max-w-7xl mx-auto px-5 py-10 lg:px-32 lg:pt-20">
+      <div className="container max-w-7xl w-full mx-auto px-5 py-10 lg:px-32 lg:pt-20">
         {/* === Section Title === */}
         <div className="flex w-full items-center justify-center mb-4">
           <motion.p

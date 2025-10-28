@@ -36,14 +36,19 @@ const Contactwithus = () => {
   return (
    <div className="w-full flex flex-col mb-5 mt-8 overflow-x-hidden">
   {/* Hero Section */}
-  <section
-    className="w-full h-[300px] bg-cover bg-center flex items-center justify-start px-6"
-    style={{ backgroundImage: `url(${Contactimg})` }}
-  >
-    <h1 className="text-white text-[36px] md:text-[50px] font-mont w-full md:w-7xl px-2 md:px-3">
-      Contact With Us
-    </h1>
-  </section>
+ <section
+  className="relative w-full h-[300px] bg-cover bg-center flex items-center justify-start px-6"
+  style={{ backgroundImage: `url(${Contactimg})` }}
+>
+  {/* Black Overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  {/* Text Content */}
+  <h1 className="relative text-white text-[36px] md:text-[50px] font-mont w-full md:w-7xl px-2 md:px-3 z-10 font-lexend">
+    Contact With Us
+  </h1>
+</section>
+
 
   {/* Content Wrapper */}
   <div className="max-w-7xl w-full flex flex-col md:flex-row mx-auto p-4 gap-6">
