@@ -21,13 +21,14 @@ const WhoWeAre = () => {
       <div className="w-full flex flex-col  gap-4">
         <div className="flex w-full  items-center md:items-start justify-center md:justify-start">
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex font-hind font-medium text-[16px] text-[#9116A1] bg-gray-300 px-3 rounded-sm"
-          >
-            Who We Are
-          </motion.p>
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="flex items-center justify-center font-hind font-medium text-[14px] sm:text-[16px] text-cyan-700 bg-cyan-500/10 border border-cyan-700/30 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 w-fit mx-auto"
+>
+  Who We Are
+</motion.p>
+
         </div>
         <div className="flex items-center md:items-start justify-center md:justify-start text-center md:text-start">
           <motion.p
@@ -55,62 +56,67 @@ const WhoWeAre = () => {
             collaborations and exceptional placement record.
           </motion.p>
         </div>
-     <div className="flex flex-wrap justify-center gap-6">
-  {/* Card 1 */}
-  <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
-      <LuUserRoundCheck className="text-4xl text-white" />
-    </div>
-    <div className="flex flex-col justify-center">
-      <p className="text-2xl font-bold text-[#082A5E] leading-tight">50+</p>
-      <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
-        Expert Trainers
-      </p>
-    </div>
-  </div>
+        <div className="flex flex-wrap justify-center gap-6">
+          {/* Card 1 */}
+          <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
+              <LuUserRoundCheck className="text-4xl text-white" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="text-2xl font-bold text-[#082A5E] leading-tight">
+                50+
+              </p>
+              <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
+                Expert Trainers
+              </p>
+            </div>
+          </div>
 
-  {/* Card 2 */}
-  <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
-      <IoDocumentTextOutline className="text-4xl text-white" />
-    </div>
-    <div className="flex flex-col justify-center">
-      <p className="text-2xl font-bold text-[#082A5E] leading-tight">1000+</p>
-      <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
-        Specialized Modules
-      </p>
-    </div>
-  </div>
+          {/* Card 2 */}
+          <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
+              <IoDocumentTextOutline className="text-4xl text-white" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="text-2xl font-bold text-[#082A5E] leading-tight">
+                1000+
+              </p>
+              <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
+                Specialized Modules
+              </p>
+            </div>
+          </div>
 
-  {/* Card 3 */}
-  <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
-      <GiGraduateCap className="text-4xl text-white" />
-    </div>
-    <div className="flex flex-col justify-center">
-      <p className="text-2xl font-bold text-[#082A5E] leading-tight">8000+</p>
-      <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
-        Successful Graduates
-      </p>
-    </div>
-  </div>
+          {/* Card 3 */}
+          <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-violet-300 rounded-xl shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
+              <GiGraduateCap className="text-4xl text-white" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="text-2xl font-bold text-[#082A5E] leading-tight">
+                8000+
+              </p>
+              <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
+                Successful Graduates
+              </p>
+            </div>
+          </div>
 
-  {/* Card 4 */}
-  <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-cyan-300 rounded-xl shadow-lg">
-    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
-      <LuBookOpen className="text-4xl text-white" />
-    </div>
-    <div className="flex flex-col justify-center">
-      <p className="text-2xl font-bold text-[#082A5E] leading-tight">120+</p>
-      <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
-        Courses Available
-      </p>
-    </div>
-  </div>
-</div>
-
-
-        
+          {/* Card 4 */}
+          <div className="flex items-center gap-4 p-4 w-[260px] bg-white border-2 border-cyan-300 rounded-xl shadow-lg">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-400">
+              <LuBookOpen className="text-4xl text-white" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <p className="text-2xl font-bold text-[#082A5E] leading-tight">
+                120+
+              </p>
+              <p className="text-base font-light text-[#082A5E] leading-snug font-hind">
+                Courses Available
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div className="w-full flex items-center md:items-start justify-center md:justify-start">
           <button

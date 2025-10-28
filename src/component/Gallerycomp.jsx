@@ -41,7 +41,7 @@ export default function Gallerycomp() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex font-hind font-medium text-[16px] text-center items-center justify-center text-gray-700 bg-gray-300 px-3 rounded-sm w-fit"
+        className="flex items-center justify-center font-hind font-medium text-[14px] sm:text-[16px] text-cyan-700 bg-cyan-500/10 border border-cyan-700/30 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 w-fit mx-auto"
       >
         Gallery
       </motion.p>

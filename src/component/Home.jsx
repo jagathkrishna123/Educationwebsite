@@ -63,15 +63,16 @@ const Home = () => {
         {/* Duplicate list for seamless loop */}
         {[...imagecollection, ...imagecollection, ...imagecollection].map((image) => (
           <div
-            key={image.id + Math.random()}
-            className="flex-shrink-0 w-[150px] h-[100px] flex items-center justify-center mx-4"
-          >
-            <img
-              src={image.img}
-              alt=""
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
+  key={image.id + Math.random()}
+  className="flex-shrink-0 w-[100px] h-[70px] sm:w-[150px] sm:h-[100px] flex items-center justify-center mx-3"
+>
+  <img
+    src={image.img}
+    alt=""
+    className="max-w-full max-h-full object-contain"
+  />
+</div>
+
         ))}
       </div>
     </div>

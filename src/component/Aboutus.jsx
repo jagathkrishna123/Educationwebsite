@@ -109,7 +109,7 @@
 // export default Aboutus
 
 import { motion } from "framer-motion";
-import { FaArrowRight, FaAward, FaGraduationCap, FaUsers, FaChalkboardTeacher, FaLaptopCode, FaDatabase, FaMobile, FaCloud } from "react-icons/fa";
+import { FaArrowRight, FaAward, FaGraduationCap, FaUsers, FaChalkboardTeacher, FaLaptopCode, FaDatabase, FaMobile, FaCloud, FaRegGem } from "react-icons/fa";
 import Contactimg from "../assets/contact.jpg";
 import Bgimg from "../assets/slideimg1.jpg";
 import slideimg2 from "../assets/slideimg2.jpg";
@@ -118,6 +118,8 @@ import slideimg4 from "../assets/slideimg4.jpg";
 import slideimg5 from "../assets/slideimg5.jpg";
 import slideimg6 from "../assets/slideimg6.jpg";
 import { useEffect, useState } from "react";
+import { FaUserFriends } from "react-icons/fa";
+
 
 const Aboutus = () => {
   const courses = [
@@ -189,14 +191,27 @@ const Aboutus = () => {
   {/* LEFT SIDE CONTENT */}
   <div className="w-full flex flex-col gap-4">
     <div className="flex w-full items-center md:items-start justify-center md:justify-start">
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex font-hind font-medium text-[16px] text-[#9116A1] bg-gray-300 px-3 rounded-sm"
-      >
-        Who We Are
-      </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="font-hind font-medium text-[16px] text-cyan-700 bg-cyan-500/10 border border-cyan-700/30 rounded-full px-6 py-2 inline-block"
+>
+  Who We Are
+</motion.p>
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     <div className="flex flex-col items-center md:items-start justify-center md:justify-start text-center md:text-start">

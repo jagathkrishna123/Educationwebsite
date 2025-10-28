@@ -445,19 +445,21 @@ const Header = () => {
   <img
     src={Mainimg2}
     alt="background"
+    loading="lazy"
     className="absolute inset-0 w-full h-full object-contain opacity-20 md:hidden"
   />
 
   {/* Top Label */}
-  <motion.p
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: 0.7 }}
-    className="text-[16px] font-hind text-[#9116A1] flex gap-1 items-center justify-center md:justify-start relative z-10"
-  >
-    <img src={Trophyimg} alt="" className="w-5" />
-    Leaders in Education Since 6 Years
-  </motion.p>
+ <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.7 }}
+  className="flex items-center justify-center md:justify-start gap-2 font-hind font-medium text-[16px] text-cyan-700 bg-cyan-500/10 border border-cyan-700/30 rounded-full px-6 py-2 w-fit mx-auto md:mx-0"
+>
+  <img src={Trophyimg} alt="" className="w-5 h-5" />
+  Leaders in Education Since 6 Years
+</motion.p>
+
 
   {/* Heading */}
 <div className="flex max-w-lg w-full mx-auto md:mx-0 md:w-auto text-center md:text-left mt-5 md:mt-0 relative z-10">
@@ -584,7 +586,7 @@ const Header = () => {
           transition={{ duration: 0.6, delay: 1 }}
           className="w-full  flex-col mt-12 justify-center items-center hidden lg:flex"
         >
-          <img src={Mainimg2} alt="" className="w-[500px]" />
+          <img src={Mainimg2} alt="" loading="lazy" className="w-[500px]" />
         </motion.div>
       </div>
     </div>

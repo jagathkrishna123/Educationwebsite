@@ -180,7 +180,7 @@ const Navbar = () => {
                         Login
                     </button> */}
         <button
-          className="text-white rounded-lg px-3 py-2 font-medium text-[15px]
+          className="text-white rounded-lg px-3 py-2 font-medium text-[15px] border border-white/30
              bg-gradient-to-b from-cyan-600 to-cyan-800
              transition-all duration-300 ease-out
              hover:from-cyan-400 hover:to-cyan-600

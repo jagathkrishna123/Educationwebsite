@@ -148,8 +148,7 @@ const OurCourses = () => {
     activeFilter === "All Courses"
       ? COURSESDATA
       : COURSESDATA.filter(
-          (item) =>
-            item.status.toLowerCase() === activeFilter.toLowerCase()
+          (item) => item.status.toLowerCase() === activeFilter.toLowerCase()
         );
 
   return (
@@ -160,7 +159,7 @@ const OurCourses = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-hind text-[16px] bg-slate-200 px-1 max-w-xs rounded text-[#9116A1] font-medium mt-6"
+            className="font-hind font-medium text-[14px] sm:text-[16px] md:text-[18px] text-cyan-700 bg-cyan-500/10 border border-cyan-700/30 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 w-fit mx-auto md:mx-0 mt-4 sm:mt-6"
           >
             10+ Unique Online & Offline Courses
           </motion.p>
@@ -179,7 +178,7 @@ const OurCourses = () => {
           </div>
 
           {/*  Filter buttons */}
-          <div className="w-full flex flex-row items-center justify-center md:justify-end gap-6 font-hind text-[14px] md:text-[17px] text-[#39557E] cursor-pointer">
+          <div className="w-full flex flex-row items-center justify-center md:justify-end gap-6 font-hind text-[14px] md:text-[17px] text-[#39557E] cursor-pointer mt-5">
             {["All Courses", "New", "Recommended", "Most placed"].map(
               (filter) => (
                 <p
