@@ -98,7 +98,7 @@ const Navbar = () => {
       //     ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
       //     : "py-4 md:py-3"
       // }`}
-      className={`fixed top-0 left-0 bg-green-400 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 z-50 ${
+      className={`fixed top-0 left-0 bg-cyan-700 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-12 z-50 ${
         isScrolled
           ? "bg-white/40 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
           : "py-4 md:py-3 transition-[background-color,box-shadow,backdrop-filter,padding] duration-500"
