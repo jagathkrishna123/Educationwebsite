@@ -126,6 +126,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 import { CiTimer } from "react-icons/ci";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import EnrollBadge from "./EnrollBadge";
 
 const container = {
   hidden: { opacity: 0 },
@@ -173,7 +174,7 @@ const OurCourses = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[24px] md:text-[36px] font-bold font-lexend text-gray-800"
             >
-              Our <span className="text-green-600">Featured</span> Courses
+              Our <span className="text-green-600">Program</span> for Students
             </motion.h2>
           </div>
 
@@ -202,7 +203,7 @@ const OurCourses = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-4"
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-4"
         >
           {filteredCourses.map((item, index) => (
             <div
@@ -211,12 +212,20 @@ const OurCourses = () => {
               className="flex flex-col items-center rounded-xl border border-gray-300 shadow-lg cursor-pointer"
             >
               <div className="w-full overflow-hidden rounded-t-xl relative">
-                <img src={item.image} alt="" className="w-full bg-cover h-60" />
-                <div className="absolute inset-0 bg-black/40"></div>
+                <img src={item.image} alt="" className="w-full bg-cover h-[300px]" />
+                <div className="absolute inset-0 bg-black/60"></div>
 
-                <p className="absolute top-2 left-2 bg-cyan-800 text-white text-sm md:text-base font-hind px-3 py-1 rounded">
-                  {item.status}
-                </p>
+                {/* <p className="absolute top-2 left-2 bg-cyan-800 text-white text-sm md:text-base font-hind px-3 py-1 rounded"> */}
+                  {/* {item.status} */}
+                  {/* Enroll now */}
+                {/* </p> */}
+{/* <p className="absolute top-2 left-2 rounded-full overflow-hidden p-[2px] animate-spin-border">
+  <span className="block bg-cyan-800 text-white text-sm md:text-base font-hind rounded-full px-3 py-1">
+    Enroll nowk
+  </span>
+</p> */}
+<EnrollBadge/>
+
                 <motion.p
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -225,6 +234,10 @@ const OurCourses = () => {
                 >
                   {item.title}
                 </motion.p>
+
+                <p className="absolute bottom-3 left-6 font-lexend text-[16px] text-gray-200">
+                  {item.coursename}
+                </p>
               </div>
 
               <div className="flex flex-col w-full items-start p-6">
@@ -244,17 +257,17 @@ const OurCourses = () => {
                   </p>
                 </div>
                 <div className="w-full items-start flex flex-col">
-                  <div className="flex flex-row items-center text-yellow-400 text-lg gap-2">
+                  {/* <div className="flex flex-row items-center text-yellow-400 text-lg gap-2">
                     {"★".repeat(item.rating) + "☆".repeat(5 - item.rating)}
                     <p className="text-[#39557E] font-hind text-[16px]">
                       {item.rating}
                     </p>
-                  </div>
+                  </div> */}
 
-                  <p className="flex flex-row font-hind text-[13px] text-[#39557E] items-center gap-2 w-full">
+                  {/* <p className="flex flex-row font-hind text-[13px] text-[#39557E] items-center gap-2 w-full">
                     <span>🏆</span>
                     {item.subtitle}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

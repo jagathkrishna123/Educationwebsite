@@ -95,3 +95,38 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+@layer utilities {
+  @keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .button-glow {
+    background: conic-gradient(
+       from 0deg,
+      #00f5ff,
+      rgba(0, 245, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      #00f5ff,
+      rgba(0, 245, 255, 0.15),
+      rgba(0, 245, 255, 0.25),
+      rgba(255, 255, 255, 0.2),
+      #00f5ff
+    );
+    background-size: 300% 300%;
+    animation: shine 6s ease-out infinite;
+  }
+}
+
+
+
+
