@@ -54,14 +54,10 @@ const Footer = () => {
           <ul className="flex flex-col gap-2 sm:gap-4 font-hind font-medium text-[13px] sm:text-[15px]">
             <li>Python Data Analytics with Power BI</li>
             <li>Best Flutter Training In Calicut (Kozhikode)</li>
-            <li>Asp.net MVC with Angular - Full Stack</li>
             <li>Python Django - React - Full Stack</li>
             <li>Web Development Expert</li>
             <li>PYTHON DATA SCIENCE - ML - AI</li>
-            <li>Software Testing Training Manual & Automation</li>
             <li>MEA(R)N Stack Web Development</li>
-            <li>Robotics with AI & IoT Training</li>
-            <li>Java Spring Full Stack Development</li>
           </ul>
         </motion.div>
 

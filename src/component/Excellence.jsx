@@ -54,7 +54,7 @@ const Excellence = () => {
         >
           <motion.div
             variants={item}
-            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4  shadow-lg"
+            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4  shadow-lg py-2"
           >
             <FaHandshakeAngle className="text-blue-800 text-[30px]" />
             <div className="max-w-sm  text-center text-[#082A5E]">
@@ -72,7 +72,7 @@ const Excellence = () => {
 
           <motion.div
             variants={item}
-            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4 shadow-lg"
+            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4 shadow-lg py-2"
           >
             <IoPerson className="text-blue-800 text-[30px]" />
             <div className="max-w-sm  text-center text-[#082A5E] ">
@@ -90,7 +90,7 @@ const Excellence = () => {
 
           <motion.div
             variants={item}
-            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4  shadow-lg"
+            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4  shadow-lg py-2"
           >
             <FaLaptopCode className="text-blue-800 text-[30px]" />
             <div className="max-w-sm text-center text-[#082A5E]">
@@ -108,7 +108,7 @@ const Excellence = () => {
 
           <motion.div
             variants={item}
-            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4 shadow-lg"
+            className="flex flex-col items-center justify-center border border-gray-300 rounded-lg p-2 md:p-4 shadow-lg py-2"
           >
             <PiMedalFill className="text-blue-800 text-[30px]" />
             <div className="max-w-sm text-center text-[#082A5E]">

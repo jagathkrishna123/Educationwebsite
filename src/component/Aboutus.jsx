@@ -109,7 +109,7 @@
 // export default Aboutus
 
 import { motion } from "framer-motion";
-import { FaArrowRight, FaAward, FaGraduationCap, FaUsers, FaChalkboardTeacher, FaLaptopCode, FaDatabase, FaMobile, FaCloud, FaRegGem } from "react-icons/fa";
+import { FaArrowRight, FaAward, FaGraduationCap, FaUsers, FaChalkboardTeacher, FaLaptopCode, FaDatabase, FaMobile, FaCloud, FaRegGem, FaPython } from "react-icons/fa";
 import Contactimg from "../assets/contact.jpg";
 import Bgimg from "../assets/slideimg1.jpg";
 import slideimg2 from "../assets/slideimg2.jpg";
@@ -124,7 +124,7 @@ import { FaUserFriends } from "react-icons/fa";
 const Aboutus = () => {
   const courses = [
     { icon: <FaLaptopCode />, title: "Full Stack Development", students: "500+" },
-    { icon: <FaDatabase />, title: "Data Science & AI", students: "350+" },
+    { icon: <FaPython />, title: "Python Development", students: "350+" },
     { icon: <FaMobile />, title: "Mobile App Development", students: "400+" },
     { icon: <FaCloud />, title: "Cloud Computing", students: "300+" }
   ];
@@ -391,7 +391,7 @@ const Aboutus = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl p-6 text-white hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-xl p-6 text-white hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <div className="text-5xl mb-4">{course.icon}</div>
               <h3 className="font-lexend text-[20px] font-bold mb-3">

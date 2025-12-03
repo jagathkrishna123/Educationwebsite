@@ -404,13 +404,13 @@ const Header = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="absolute w-[200px] h-auto p-2 border rounded-lg bg-green-400 mt-[100px] hidden md:flex z-10 shadow-md"
+        className="absolute w-[200px] h-auto p-2 border rounded-lg bg-cyan-500 mt-[100px] hidden md:flex z-10 shadow-md"
       >
-        <div className="flex flex-col w-full items-center justify-center">
-          <div className="bg-blue-400 items-center justify-center p-2 rounded-full">
+        <div className="flex flex-col w-full items-center justify-center gap-1">
+          <div className="bg-blue-300 items-center justify-center p-2 rounded-full">
             <img src={Scholar} alt="" className="w-[50px]" />
           </div>
-          <p className="text-[14px] font-hind text-[#39557E]">Placements</p>
+          <p className="text-[14px] font-hind text-gray-600/90 font-bold">Placements</p>
           <p className="text-[30px] font-lexend font-bold text-[#082A5E]">
             8000+
           </p>
@@ -421,13 +421,13 @@ const Header = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="absolute right-10 top-8 w-[150px] h-auto p-2 border rounded-lg bg-green-400 hidden md:flex shadow-md"
+        className="absolute right-10 top-8 w-[150px] h-auto p-2 border rounded-lg bg-cyan-500 hidden md:flex shadow-md"
       >
-        <div className="flex flex-col w-full items-center justify-center">
-          <div className="bg-blue-400 items-center justify-center p-2 rounded-full">
+        <div className="flex flex-col w-full items-center justify-center gap-1">
+          <div className="bg-blue-300 items-center justify-center p-2 rounded-full">
             <img src={Icicon} alt="" className="w-[30px] invert" />
           </div>
-          <p className="text-[14px] font-hind text-[#39557E]">
+          <p className="text-[14px] font-hind text-gray-600/80 font-bold">
             Total Technologies
           </p>
           <p className="text-[30px] font-lexend font-bold text-[#082A5E]">

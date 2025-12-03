@@ -235,9 +235,9 @@ const OurCourses = () => {
                   {item.title}
                 </motion.p>
 
-                <p className="absolute bottom-3 left-6 font-lexend text-[16px] text-gray-200">
+                {/* <p className="absolute bottom-3 left-6 font-lexend text-[16px] text-gray-200">
                   {item.coursename}
-                </p>
+                </p> */}
               </div>
 
               <div className="flex flex-col w-full items-start p-6">
@@ -252,7 +252,7 @@ const OurCourses = () => {
                   </p>
                 </div>
                 <div className="w-full flex items-start">
-                  <p className="font-lexend text-[20px] text-gray-700">
+                  <p className="font-lexend text-[17px] md:text-[20px] text-gray-700">
                     {item.coursename}
                   </p>
                 </div>

@@ -180,7 +180,7 @@ const Navbar = () => {
                         Login
                     </button> */}
         <button
-          className="text-white rounded-lg px-3 py-2 font-medium text-[15px] border border-white/30
+          className="text-white rounded-lg px-3 py-2 font-medium text-[15px]
              bg-gradient-to-b from-cyan-600 to-cyan-800
              transition-all duration-300 ease-out
              hover:from-cyan-400 hover:to-cyan-600
@@ -286,7 +286,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen bg-white text-[22px]  flex flex-col md:hidden items-center justify-center gap-8 font-medium text-gray-800 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full h-screen bg-white text-[18px]   flex flex-col md:hidden items-center justify-center gap-8 font-medium text-gray-800 transition-all duration-500 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -311,14 +311,6 @@ const Navbar = () => {
             {link.name}
           </a>
         ))}
-
-        <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
-          New Launch
-        </button>
-
-        <button className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">
-          Login
-        </button>
       </div>
     </motion.nav>
   );
